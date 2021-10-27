@@ -1,0 +1,78 @@
+
+// Transitions - @include transition(all,2s,ease-out); //
+@mixin transition($what: all, $time: 0.2s, $how: ease-in-out) {
+    -webkit-transition: $what $time $how;
+    -moz-transition:    $what $time $how;
+    -ms-transition:     $what $time $how;
+    -o-transition:      $what $time $how;
+    transition:         $what $time $how;
+}
+
+// Transforms - @include transforms(translateX(-50%)) //
+@mixin transform($transforms) {
+    -webkit-transform: $transforms;
+    -moz-transform: $transforms;
+    -ms-transform: $transforms;
+    transform: $transforms;
+}
+
+// Rotate - @include rotate(45deg) //
+@mixin rotate ($deg) { 
+    @include transform(rotate(#{$deg}));
+}
+
+// Scale - @include scale(1.5) //
+@mixin scale($scale) {
+    @include transform(scale($scale));
+}
+
+// Translate - @include translate(-50%) //
+@mixin translate ($x, $y) {
+    @include transform(translate($x, $y));
+}
+
+// Skew - @include skew(45deg) //
+@mixin skew ($x, $y) {
+    @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+// Transform Origin - @include transform-origin(center) //
+@mixin transform-origin ($origin) {
+        -webkit-transform-origin: $origin;
+        -moz-transform-origin: $origin;
+    -ms-transform-origin: $origin;
+    transform-origin: $origin;
+}
+
+// Placeholder - @include placeholder { color: #fff; }
+@mixin placeholder {
+    &::-webkit-input-placeholder {@content}
+    &:-moz-placeholder           {@content}
+    &::-moz-placeholder          {@content}
+    &:-ms-input-placeholder      {@content}  
+}
+
+// Box shadow - @include box-shadow(0px 0px 4px rgba(0,0,0,0.1)); //
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;       
+          box-shadow: $shadow;
+}
+
+// Media Query Tablet - @include mq-tablet{} //
+@mixin mq-tablet {
+    @media (max-width: 1024px) { @content; }
+}
+// Media Query Phone - @include mq-phone{} //
+@mixin mq-phone {
+    @media (max-width: 768px) { @content; }
+}
+// Media Query Phone XS - @include mq-phone-xs{} //
+@mixin mq-phone-xs {
+    @media (max-width: 480px) { @content; }
+}
+
+// Media Query Tablet and above - @include mq-tablet-and-up{} //
+@mixin mq-tablet-and-up {
+    @media (min-width: 769px) { @content; }
+}

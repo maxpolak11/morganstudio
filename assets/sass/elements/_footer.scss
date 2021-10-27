@@ -1,0 +1,74 @@
+
+#footer{
+	padding: 60px 0;
+	background-color: $black;
+
+	> .container{
+		display: flex;
+		> div{
+			width: 33.333%;
+		}
+	}
+
+	h4, p{
+		color: #607d8b;
+	}
+
+	.adres{
+		text-align: left;
+	}
+
+	.dane-kontaktowe{
+		text-align: center;
+	}
+
+	.social-media{
+		text-align: right;
+
+		a{ 
+			font-size: 0;
+			display: inline-block;
+			margin-left: 8px;
+
+			&:first-child{
+				margin-left: 0;
+			}
+
+			svg path{
+				fill: #607d8b !important;
+			}
+
+			&:hover{
+				svg path{
+					fill: $blue !important;
+				}
+			}
+			
+		}
+
+		svg{
+			width: 24px;
+			height: 24px;
+			path{
+				@include transition(fill, .1s, ease);
+			}
+		}
+	}
+
+	@include mq-phone{
+		padding: 30px 0;
+
+		> .container{
+			display: block;
+			> div{
+				width: 100%;
+				text-align: center;
+				margin-bottom: 30px;
+
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}

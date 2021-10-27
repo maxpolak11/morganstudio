@@ -1,0 +1,276 @@
+/*
+
+	#oferta-header
+	#uslugi
+		.kategorie
+		.tresci
+	#cennik
+		.buttons
+		.content
+	#promocje
+
+*/
+
+#oferta-header{
+	min-height: 550px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	background-size: cover;
+	background-position: center center;
+	padding-top: 40px;
+
+	.text{
+		max-width: 460px;
+		margin: 0 auto;
+	}
+
+	@include mq-tablet{
+		min-height: 500px;
+	}
+
+	@include mq-phone{
+		min-height: 400px;
+	}
+}
+
+#uslugi{
+	> .container{
+		display: flex;
+
+		.kategorie{
+			width: 240px;
+
+			a{
+				display: block;
+				color: $black;
+				text-decoration: none;
+				padding: 9px 30px;
+				border-bottom: solid 1px #b6b6b6;
+				cursor: pointer;
+				@include transition( all, .15s, ease);
+
+				&:hover{
+					color: $blue;
+				}
+
+				&.active{
+					background-color: $blue;
+					color: #fff;
+					border-bottom-color: transparent;
+					border-radius: 50px;
+					cursor: default;
+				}
+				
+				&.prev{
+					border-bottom-color: transparent;
+				}
+
+				&:last-child{
+					border-bottom: none;
+				}
+			}
+		}
+
+		.tresci{
+			flex: 1;
+			padding-left: 175px;
+			text-align: center;
+
+			.content{
+				display: none;
+				max-width: 460px;
+
+				&.active{
+					display: block;
+				}
+			}
+
+			@include mq-tablet{
+				padding-left: 60px;
+
+				.content{
+					margin: 0 auto;
+				}
+			}
+
+		}
+
+		@include mq-phone{
+			display: block;
+
+			.kategorie{
+				width: 100%;
+				text-align: center;
+				margin-bottom: 35px;
+
+				.kategoria{
+					display: inline-block;
+					border-bottom: none;
+					background-color: $grey_light;
+					border-radius: 50px;
+					margin: 3px;
+					padding: 5px 9px;
+					color: $grey;
+
+					&.active{
+						text-decoration: none;
+					}
+				}
+			}
+			.tresci{
+				padding: 0;
+			}
+		}
+	}
+}
+
+#cennik{
+	text-align: center;
+
+	.buttons{
+
+		a.button{
+			margin: 0 5px;
+			background-color: $grey_light;
+			color: $grey;
+			margin-bottom: 60px;
+
+			&:hover{
+				color: $black;
+			}
+
+			&.active{
+				background-color: $blue;
+				color: #fff;
+				cursor: default;
+			}
+
+		}
+
+	}
+
+	.content{
+		display: none;
+		text-align: left;
+		&.active{ display: block; }
+		overflow: hidden;
+		
+  		.wrapper{
+  			column-count: 2;
+  			column-gap: 30px;
+  		}
+
+		.kategoria{
+			display: flex;
+			width: 100%;
+			float: left;
+			padding-bottom: 10px;
+			border-bottom: solid 1px $grey_light;
+			margin-bottom: 10px;
+			-webkit-column-break-inside: avoid;
+			page-break-inside: avoid;
+			break-inside: avoid;
+
+			&.last, &:last-child{
+				border-bottom-color: #fff;
+			}
+
+			h5, .uslugi-i-ceny{
+				width: 50%;
+			}
+
+			.uslugi-i-ceny{
+				
+				.usluga-i-cena{
+					display: flex;
+
+					&:after{
+						content: "";
+						display: block;
+						clear: both;
+					}
+
+					p{
+						font-size: 13px;
+						line-height: 20px;
+					}
+
+					.usluga{
+						color: #727272;
+						flex: 1;
+						padding-left: 10px;
+					}
+
+					.cena{
+						min-width: 55px;
+						margin-left: auto;
+						color: $blue;
+						text-align: right;
+					}
+
+				}
+				
+			}
+
+		}
+
+		@include mq-phone{
+			.wrapper{
+				column-count: initial;
+  				column-gap: initial;
+  				max-width: 480px;
+  				margin: 0 auto;
+
+  				.kategoria{
+  					&.last{
+  						border-color: $grey_light;
+  					}
+  				}
+			}
+		}
+
+	}
+
+}
+
+#promocje{
+	text-align: center;
+	background-size: cover;
+	background-position: 0px 0px;
+	padding: 100px 0;
+	
+	.wrapper{
+		display: flex;
+	}
+
+	p{
+		width: 33.333%;
+		color: #cfd8dc;
+		padding: 0 15px;
+	}
+
+	@include mq-tablet{
+		padding: 85px 0;
+	}
+
+	@include mq-phone{
+		padding: 60px 0;
+
+		.wrapper{
+			display: block;
+		}
+
+		p{
+			width: 100%;
+			max-width: 400px;
+			margin-left: auto; margin-right: auto;
+			margin-bottom: 30px;
+
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+	}
+
+}

@@ -1,0 +1,59 @@
+
+#cookies-information{
+	position: fixed;
+	left: 0; bottom: 0;
+	z-index: 2;
+	width: 100%;
+	background-color: #fff;
+	padding: 10px;
+	text-align: center;
+	border-top: 1px solid #ccc;
+	opacity: 0.9;
+
+	> .container{
+		display: flex;
+		align-items: center;
+	}
+
+	p{
+		padding-right: 20px;
+		margin: 0 auto;
+	}
+
+	div.close{
+		margin-left: auto;
+		position: relative;
+		background-color: $grey;
+		cursor: pointer;
+		width: 20px;
+		height: 20px;
+		@include transition(background-color, .1s, ease);
+
+		&:hover{
+			background-color: $black;
+		}
+
+		a{
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+
+			&:before, &:after {
+				position: absolute;
+				left: 9px; top: 4px;
+				content: ' ';
+				height: 12px;
+				width: 3px;
+				background-color: #fff;
+			}
+			&:before {
+				transform: rotate(45deg);
+			}
+			&:after {
+				transform: rotate(-45deg);
+			}
+		}
+
+	}
+	
+}

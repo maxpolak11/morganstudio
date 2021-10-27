@@ -1,0 +1,133 @@
+
+body {
+	font-family: 'Lato', Arial, Helvetica, sans-serif;
+	color: #222;
+}
+
+*{ font-size: 0; }
+
+p,a,h1,h2,h3,h4,h5,h6{
+	padding: 0;
+	margin: 0;
+	line-height: normal;
+
+	&.white{
+		color: #fff;
+	}
+}
+
+p,a, button, label{
+	font-size: 14px;
+}
+
+p{
+	line-height: 20px;
+}
+
+h1, h2{
+	font-size: 38px;
+	font-weight: 900;
+	margin-bottom: 30px;
+
+	@include mq-tablet{
+		font-size: 32px;
+	}
+	@include mq-phone{
+		font-size: 26px;
+	}
+}
+
+h3, h4{
+	font-size: 16px;
+	font-weight: 900;
+	margin-bottom: 15px;
+}
+
+h5{
+	font-size: 13px;
+	font-weight: 900;
+	line-height: 20px;
+}
+
+button{
+	padding: 0;
+	border: none;
+	background: none;
+}
+
+.button{
+	display: inline-block;
+	border-radius: 50px;
+	padding: 12px 15px;
+	cursor: pointer;
+	text-decoration: none !important;
+	color: $black;
+	@include transition(all, .2s, ease);
+
+	&.bold{
+		font-weight: 900;
+	}
+
+	&.wide{
+		padding: 12px 30px;
+	}
+
+	&.blue{
+		
+		&.filled{
+			border: solid 1px $blue;
+			background-color: $blue;
+			color: #fff;
+
+			&:hover{
+				border: solid 1px darken($blue, 5%);
+				background-color: darken($blue, 5%);
+			}
+		}
+	}
+
+	&.white{
+
+		&.filled{
+			border: solid 1px #fff;
+			background-color: #fff;
+			color: $black;
+
+			&:hover{
+				border: solid 1px darken(#fff, 5%);
+				background-color: darken(#fff, 5%);
+			}
+		}
+
+		&.outline{
+			border: solid 1px #fff;
+			color: #fff;
+
+			&:hover{
+				color: $black;
+				background-color: rgba( #fff, 1);
+			}
+		}
+
+	}
+
+	&.grey-blue{
+		&.filled{
+			background-color: #f4f4f4;
+			color: $black;
+			cursor: pointer;
+
+			&:hover{
+				background-color: darken(#f4f4f4, 5%);
+			}
+
+			&.active{
+				color: #fff;
+				background-color: $blue;
+				cursor: default;
+			}
+			
+		}
+
+	}
+}

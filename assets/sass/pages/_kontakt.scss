@@ -1,0 +1,131 @@
+/*
+
+	#kontakt-header
+	#kontakt
+		.informacje
+		.mapa
+
+*/
+
+#kontakt-header{
+	min-height: 550px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	background-size: cover;
+
+	.text{
+		padding-top: 60px;
+		max-width: 460px;
+		margin: 0 auto;
+	}
+
+	@include mq-tablet{
+		min-height: 500px;
+	}
+
+	@include mq-phone{
+		min-height: 400px;
+	}
+}
+
+#kontakt{
+
+	> .container{
+		display: flex;
+	}
+
+	.informacje{
+		
+		.box{
+			width: 300px;
+			height: 300px;
+			display: flex;
+			align-items: center;
+			text-align: center;
+			padding: 20px;
+
+			&.dane-kontaktowe{
+				border: solid 1px #b6b6b6;
+				margin-bottom: 20px;
+
+				p{
+					color: #727272;
+					margin-bottom: 20px;
+				}
+			}
+
+			&.oferta{
+				background-size: cover;
+				background-position: 0px 0px;
+
+				.buttons{
+					margin-top: 20px;
+					.button{
+						margin: 0 5px;
+					}
+				}
+			}
+			
+			.wrapper{
+				margin: 0 auto;
+			}
+		}
+	}
+
+	.mapa{
+		padding-left: 20px;
+		flex: 1;
+
+		#map{
+			width: 100%;
+			height: 100%;
+			
+			iframe{
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+	
+	@include mq-tablet{
+
+		> .container{
+			flex-direction: column;
+		}
+
+		.mapa{
+			width: 100%;
+			height: 400px;
+			flex: initial;
+			padding: 0;
+		}
+
+		.informacje{
+			text-align: center;
+			margin-bottom: 55px;
+
+			.box{
+				display: inline-flex;
+				vertical-align: middle;
+				margin-bottom: 0 !important;
+				margin: 0 15px;
+			}
+		}
+	}
+
+	@include mq-phone{
+		.informacje{
+
+			.box{
+				width: 100%;
+				margin: 0;
+
+				&.oferta{
+					display: none;
+				}
+			}
+		}
+	}
+
+}

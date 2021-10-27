@@ -1,0 +1,9 @@
+#wp-admin-morganstudio-ustawienia{
+
+}
+
+#wp-admin-morganstudio-ustawienia input,
+#wp-admin-morganstudio-ustawienia textarea{
+	width:  100%;
+	max-width:  350px;
+}

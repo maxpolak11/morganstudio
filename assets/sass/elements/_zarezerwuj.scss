@@ -1,0 +1,65 @@
+.zarezerwuj{
+	padding: 50px 0;
+	background-color: $blue;
+	
+	> .container{
+		display: flex;
+		align-items: center;
+	}
+
+	h3{
+		margin: 0;
+	}
+
+	.text{
+		width: 50%;
+		padding-right: 30px;
+	}
+
+	.przycisk{
+		width: 50%;
+		text-align: center;
+		.button{
+			width: 100%;
+		}
+	}
+
+	@include mq-tablet{
+		padding: 40px 0;
+
+		.text{
+			width: 60%;
+		}
+
+		.przycisk{
+			width: 40%;
+			margin-left: auto;
+		}
+	}
+
+	@include mq-phone{
+		padding: 30px 0;
+	}
+
+	@include mq-phone-xs{
+		
+		> .container{
+			display: block;
+			text-align: center;
+		}
+
+		.text{ 
+			padding-right: 0; 
+			margin-bottom: 20px;
+		}
+
+		.text, .przycisk{
+			width: 100%;
+		}
+
+		.przycisk .button{
+			width: auto;
+		}
+		
+	}
+}
